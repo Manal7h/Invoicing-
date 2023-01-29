@@ -20,32 +20,51 @@ public class Invoicing {
 //	}
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		Scanner sc = new Scanner(System.in);
-		boolean exitMainMune = true;
-		
-		while(exitMainMune) {
-		
-		List<String> muneItemsList = Arrays.asList(
-				
-				"1- Shop Settings",
-				"2- Manage Shop Items",
-				"3- Create New Invoice",
-				"4- Report: Statistics",
-				"5- Report: All Invoices",
-				"6- Search (1) Invoice",
-				"7- Program Statistics");
-		
-		
-			
-			}
-			
-			
-			
-		
-			
-		}	
+//		boolean exitMainMune = true;
+//		
+//		while(exitMainMune) {
+//		
+//		List<String> muneItemsList = Arrays.asList(
+//				
+//				"1- Shop Settings"+
+//				"2- Manage Shop Items"+
+//				"3- Create New Invoice"+
+//				"4- Report: Statistics"+
+//				"5- Report: All Invoices"+
+//				"6- Search (1) Invoice"+
+//				"7- Program Statistics");
+//		
+////		System.out.println("Application Main Menu: " + muneItemsList );
+//	
+//			
+//			}
 
+		ShopSettings ShopSettings = new ShopSettings();
+		for(String x : ShopSettings.ShopSettingsList) {
+			System.out.print(x);
+		}
+	
+		System.out.println("No Of Option you want to choose");
+		
+		do{
+			int select = sc.nextInt();
+			switch(select) {
+						
+			case 1:
+				break;
+
+			}
+		}
+		
+		while (true);
+		}
 	}
+
+
+
+
+	
 
 
