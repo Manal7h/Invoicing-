@@ -1,9 +1,11 @@
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
 public class ShopSettings {
-
-	List<String> ShopSettingsList = Arrays.asList(
+	
+	public static void ShopSettingsList() throws IOException {
+	 List<String>  ShopSettingsList = Arrays.asList(
 			
 			"Shop Settings List : \n \n",
 			
@@ -11,6 +13,12 @@ public class ShopSettings {
 			"2- Set Shop Name (data should be saved)\n"+ 
 			"3- Set Invoice Header (Tel / Fax / Email / Website)\n"+ 
 			"4- Go Back");
-	
-	
+	 
+		
+		for (String x : ShopSettingsList) {
+			System.out.print("\n"+x);
+		}
+
+		
+	}
 }

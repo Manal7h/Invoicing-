@@ -18,53 +18,40 @@ public class Invoicing {
 //		System.out.println("7- Program Statistics");
 //		System.out.println("8- Exit");
 //	}
-	
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-//		boolean exitMainMune = true;
-//		
-//		while(exitMainMune) {
-//		
-//		List<String> muneItemsList = Arrays.asList(
-//				
-//				"1- Shop Settings"+
-//				"2- Manage Shop Items"+
-//				"3- Create New Invoice"+
-//				"4- Report: Statistics"+
-//				"5- Report: All Invoices"+
-//				"6- Search (1) Invoice"+
-//				"7- Program Statistics");
-//		
-////		System.out.println("Application Main Menu: " + muneItemsList );
-//	
-//			
-//			}
+		boolean exitMainMune = true;
 
-		ShopSettings ShopSettings = new ShopSettings();
-		for(String x : ShopSettings.ShopSettingsList) {
-			System.out.print(x);
-		}
-	
-		System.out.println("No Of Option you want to choose");
-		
-		do{
+
+		gitMainMune();
+
+		do {
 			int select = sc.nextInt();
-			switch(select) {
-						
-			case 1:
-				break;
+			switch (select) {
 
+			case 1:
+				ShopSettings ShopSettings = new ShopSettings();
+				ShopSettings.ShopSettingsList();
+
+				break;
 			}
 		}
-		
 		while (true);
-		}
 	}
-
-
-
-
 	
 
+	
+	public static void gitMainMune() {
+		
+		List<String> muneItemsList = Arrays.asList(
 
+				"1- Shop Setting" , "2- Manage Shop Items" , "3- Create New Invoice", "4- Report: Statistics"
+					, "5- Report: All Invoices" , "6- Search (1) Invoice" , "7- Program Statistics");
+		
+		
+		for (String x : muneItemsList) {
+			System.out.print("\n"+x);
+		}
+	}
+}
