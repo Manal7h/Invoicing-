@@ -12,8 +12,10 @@ public class InvoiceTable {
 	    String pass = "root";
 	    
 	    
-	    String sql = "CREATE TABLE InvoiceTable" + "(Invoice_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + " Invoice_No INTEGER NOT NULL ," 
-	    + "Invoice_Date date NOT NULL ," + " Customer_Name VARCHAR(30) ," + " No_Of_Items INTEGER," +"Total VARCHAR(30), " + " Balance VARCHAR(30)  )";
+	    String sql = "CREATE TABLE InvoiceTable" + "(Invoice_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," 
+	    + " Invoice_No INTEGER NOT NULL ,"  + "Invoice_Date date NOT NULL ," + " Customer_Name VARCHAR(30) ," 
+	    		+ " No_Of_Items INTEGER," +"Total VARCHAR(30), " + " Balance VARCHAR(30),"
+	    +"Customer_Id INTEGER REFERENCES CustomerTable(Customer_Id))";
 		
 	    
 	    Connection con = null;

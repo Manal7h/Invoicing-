@@ -12,8 +12,9 @@ public class ItemTable {
 	    String pass = "root";
 	    
 	    
-	    String sql = "CREATE TABLE ItemTable" + "( Item_ID INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Item_Name VARCHAR(30) NOT NULL ," 
-	    + "Unit_Price VARCHAR(30)," + "Quantity VARCHAR(30) ," + "Qty_Amount VARCHAR(30) )";
+	    String sql = "CREATE TABLE ItemTable" + "( Item_ID INTEGER PRIMARY KEY IDENTITY(1,1) ,"
+	    + "Item_Name VARCHAR(30) NOT NULL ,"+ "Unit_Price VARCHAR(30)," + "Quantity VARCHAR(30) ," 
+	    		+ "Qty_Amount VARCHAR(30),"+"Invoice_Id INTEGER REFERENCES InvoiceTable(Invoice_Id))";
 		
 	    
 	    Connection con = null;

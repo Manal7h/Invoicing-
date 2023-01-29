@@ -12,7 +12,7 @@ public class CustomerTable {
 	    String pass = "root";
 	    
 	    
-	    String sql = "CREATE TABLE CustomerTable" + "(Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Customer_Name VARCHAR(30) NOT NULL ," 
+	    String sql = "CREATE TABLE CustomerTable" + "(Customer_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Customer_Name VARCHAR(60) NOT NULL ," 
 	    + "Phone VARCHAR(30)," + "Invoice_Date date NOT NULL ," + " No_Of_Items INTEGER ," + "Paid_Amount VARCHAR(30)," +"Balance VARCHAR(30))";
 		
 	    
