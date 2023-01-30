@@ -15,7 +15,7 @@ public class CustomerTable {
 	    
 	    
 	    String sql = "CREATE TABLE CustomerTable" + "(Customer_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Customer_Name VARCHAR(60) NOT NULL ," 
-	    + "Phone VARCHAR(30)," +  "Paid_Amount VARCHAR(30)," +"Balance VARCHAR(30))";
+	    + "Phone VARCHAR(30)," +  "Paid_Amount VARCHAR(30))";
 		
 	
 	    Connection con = null;
@@ -64,10 +64,9 @@ public class CustomerTable {
 	       System.out.println("Enter Paid Amount");
 	       String Paid_Amount = sc.next();
 	       
-	       System.out.println("Enter Balance");
-	       String Balance = sc.next();
+
 	       
-	       String sql = "insert into CustomerTable values('"+Customer_Name+"',  '" + Phone + "',  '"+Paid_Amount+"',  '"+Balance+"')";
+	       String sql = "insert into CustomerTable values('"+Customer_Name+"',  '" + Phone + "',  '"+Paid_Amount+"')";
 	       
 	   	
 		    Connection con = null;

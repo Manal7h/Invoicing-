@@ -34,10 +34,12 @@ public class ShopSettings {
 		switch (select) {
 		
 		case 1:
-			CustomerTable.CustomerTable();
-			ItemTable.ItemTable();
-			Shop.Shop();
+//			CustomerTable.CustomerTable();
+//			ItemTable.ItemTable();
+//			Shop.Shop();
 			InvoiceTable.InvoiceTable();
+			
+//			InvoiceHeader.InvoiceHeader();
 			break;
 			
 			

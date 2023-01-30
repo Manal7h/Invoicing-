@@ -12,8 +12,7 @@ public class Shop {
 		String user = "sa";
 	    String pass = "root";
 	    
-	    String sql = "CREATE TABLE Shop" + "(Shop_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Shop_Name VARCHAR(60) NOT NULL ," 
-	    + "Tel VARCHAR(30)," + " Fax VARCHAR(30) ," + "Email VARCHAR(50)," +"Website VARCHAR(60))";
+	    String sql = "CREATE TABLE Shop" + "(Shop_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Shop_Name VARCHAR(60) NOT NULL)";
 		
 	    Connection con = null;
 		
@@ -55,20 +54,7 @@ public class Shop {
 	       System.out.println(" Enter Shop Name :");
 	       String Shop_Name = sc.next();
 
-	       System.out.println("Enter Tel");
-	       String Tel = sc.next();
-
-	       System.out.println("Enter Fax");
-	       String Fax = sc.next();
-	       
-	       System.out.println("Enter Email");
-	       String  Email = sc.next();
-	       
-	       System.out.println("Enter Website");
-	       String  Website = sc.next();
-	       
-	       
-	       String sql = "insert into Shop values('"+Shop_Name+"',  '" + Tel + "', ' " + Fax + "',  '"+Email+"',  '"+Website+"')";
+	       String sql = "insert into Shop values('"+Shop_Name+"')";
 	       
 	   	
 		    Connection con = null;

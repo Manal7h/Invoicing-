@@ -5,23 +5,18 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class InvoiceTable {
-	public static void InvoiceTable() throws IOException{
+public class InvoiceHeader {
+	public static void InvoiceHeader() throws IOException{
 		
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 	    String pass = "root";
 	    
-	    
-	    String sql = "CREATE TABLE InvoiceTable" + "(Invoice_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," 
-	    + " Invoice_No INTEGER NOT NULL ,"  + "Invoice_Date date NOT NULL ," 
-	    		+"Total VARCHAR(30), " + " Balance VARCHAR(30),"
-	    +"Customer_Id INTEGER REFERENCES CustomerTable(Customer_Id)," +"Item_ID INTEGER REFERENCES ItemTable(Item_ID),"+"Shop_Id INTEGER REFERENCES Shop(Shop_Id),"+" Header_Id INTEGER REFERENCES InvoiceHeader(Header_Id))";
+	    String sql = "CREATE TABLE InvoiceHeader" + "(Header_Id INTEGER PRIMARY KEY IDENTITY(1,1) ,"  
+	    + "Tel VARCHAR(30)," + " Fax VARCHAR(30) ," + "Email VARCHAR(50)," + "Website VARCHAR(60))";
 		
-	
 	    Connection con = null;
-	    
-	    
+		
 	    try {
 
 	        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
@@ -45,12 +40,10 @@ public class InvoiceTable {
 	        // Display message when exceptions occurs
 	        System.err.println(ex);
 	    }
-	    
-
-	
 	}
 	
-	public static void insertIntoInvoiceTable() {
+	
+	public static void insertIntoInvoiceHeader() {
 		
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
@@ -58,34 +51,21 @@ public class InvoiceTable {
 	    
 	    Scanner sc = new Scanner(System.in);
 	    
-	    
-	       System.out.println(" Enter Invoice No :");
-	       int Invoice_No = sc.nextInt();
 
-	       System.out.println("Enter Invoice Date");
-	       String Invoice_Date = sc.next();
+	       System.out.println("Enter Tel");
+	       String Tel = sc.next();
 
-	       System.out.println("Enter Total");
-	       String  Total = sc.next();
+	       System.out.println("Enter Fax");
+	       String Fax = sc.next();
 	       
-	       System.out.println("Enter Balance");
-	       String  Balance = sc.next();
+	       System.out.println("Enter Email");
+	       String  Email = sc.next();
 	       
-	       System.out.println("Enter Customer Id");
-	       int  Customer_Id = sc.nextInt();
-	       
-	       System.out.println("Enter Item ID");
-	       int  Item_ID = sc.nextInt();
-	       
-	       System.out.println("Enter Shop Id");
-	       int  Shop_Id = sc.nextInt();
-	       
-	       System.out.println("Enter Header Id");
-	       int  Header_Id = sc.nextInt();
+	       System.out.println("Enter Website");
+	       String  Website = sc.next();
 	       
 	       
-	       
-	       String sql = "insert into InvoiceTable values("+Invoice_No+",  '" + Invoice_Date + "',  '"+Total+"',  '"+Balance+"',"+Customer_Id+", "+Item_ID+", "+Shop_Id+", "+Header_Id+")";
+	       String sql = "insert into InvoiceHeader values('" + Tel + "', ' " + Fax + "',  '"+Email+"',  '"+Website+"')";
 	       
 	   	
 		    Connection con = null;
@@ -122,3 +102,4 @@ public class InvoiceTable {
 	
 	
 	
+

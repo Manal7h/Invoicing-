@@ -14,8 +14,8 @@ public class ItemTable {
 	    
 	    
 	    String sql = "CREATE TABLE ItemTable" + "( Item_ID INTEGER PRIMARY KEY IDENTITY(1,1) ,"
-	    + "Item_Name VARCHAR(30) NOT NULL ,"+ "Unit_Price VARCHAR(30)," + "Quantity VARCHAR(30) ," 
-	    		+ "Qty_Amount VARCHAR(30))";
+	    + "Item_Name VARCHAR(30) NOT NULL ,"+ "Unit_Price decimal(18,2)," + "Quantity decimal(18,2) ," 
+	    		+ "Qty_Amount decimal(18,2))";
 		
 	
 	    Connection con = null;
@@ -48,7 +48,7 @@ public class ItemTable {
 	}
 	
 	
-	public static void insertIntoItemTable() {
+	public static void insertIntoItemTable() throws IOException {
 		
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
@@ -60,16 +60,16 @@ public class ItemTable {
 		       String Item_Name = sc.next();
 
 		       System.out.println("Enter Unit Price");
-		       String Unit_Price = sc.next();
+		       double Unit_Price = sc.nextDouble();
 
 		       System.out.println("Enter Quantity");
-		       String Quantity = sc.next();
+		       double Quantity = sc.nextDouble();
+		        
 		       
-		       System.out.println("Enter Qty_Amount");
-		       String  Qty_Amount = sc.next();
+		       double  Qty_Amount = Unit_Price * Quantity;
 		       
 		       
-		       String sql = "insert into ItemTable values('"+Item_Name+"',  '" + Unit_Price + "', ' " + Quantity + "',  '"+Qty_Amount+"')";
+		       String sql = "insert into ItemTable values('"+Item_Name+"',  " + Unit_Price + "," + Quantity + ",  "+Qty_Amount+" )";
 		       
 		   	
 			    Connection con = null;
