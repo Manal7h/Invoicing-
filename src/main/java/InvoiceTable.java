@@ -14,8 +14,8 @@ public class InvoiceTable {
 	    
 	    
 	    String sql = "CREATE TABLE InvoiceTable" + "(Invoice_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," 
-	    + " Invoice_No INTEGER NOT NULL ,"  + "Invoice_Date date NOT NULL ," + " Customer_Name VARCHAR(30) ," 
-	    		+ " No_Of_Items INTEGER," +"Total VARCHAR(30), " + " Balance VARCHAR(30),"
+	    + " Invoice_No INTEGER NOT NULL ,"  + "Invoice_Date date NOT NULL ," 
+	    		+"Total VARCHAR(30), " + " Balance VARCHAR(30),"
 	    +"Customer_Id INTEGER REFERENCES CustomerTable(Customer_Id)," +"Item_ID INTEGER REFERENCES ItemTable(Item_ID),"+"Shop_Id INTEGER REFERENCES Shop(Shop_Id))";
 		
 	
@@ -59,5 +59,64 @@ public class InvoiceTable {
 	    Scanner sc = new Scanner(System.in);
 	    
 	    
+	       System.out.println(" Enter Invoice No :");
+	       int Invoice_No = sc.nextInt();
+
+	       System.out.println("Enter Invoice Date");
+	       String Invoice_Date = sc.next();
+
+	       
+	       System.out.println("Enter Total");
+	       String  Total = sc.next();
+	       
+	       System.out.println("Enter Balance");
+	       String  Balance = sc.next();
+	       
+	       System.out.println("Enter Customer Id");
+	       int  Customer_Id = sc.nextInt();
+	       
+	       System.out.println("Enter Item ID");
+	       int  Item_ID = sc.nextInt();
+	       
+	       System.out.println("Enter Shop Id");
+	       int  Shop_Id = sc.nextInt();
+	       
+	       
+	       
+	       String sql = "insert into InvoiceTable values("+Invoice_No+",  '" + Invoice_Date + "',  '"+Total+"',  '"+Balance+"',"+Customer_Id+", "+Item_ID+", "+Shop_Id+")";
+	       
+	   	
+		    Connection con = null;
+		    
+		    
+		    
+		    try {
+
+		        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+		        DriverManager.registerDriver(driver);
+		        con = DriverManager.getConnection(url, user, pass);
+
+		        Statement st = con.createStatement();
+
+		        int m = st.executeUpdate(sql);
+		        if (m >=  0)
+		            System.out.println(
+		                    "Insert successfully : " + sql);
+		        else
+		            System.out.println("Insert failed");
+
+		        con.close();
+		    }
+	        
+		    
+		    catch (Exception ex) {
+		        // Display message when exceptions occurs
+		        System.err.println(ex);
+		    }
+		}       
+		
 	}
-}
+	
+	
+	
+	

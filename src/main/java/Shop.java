@@ -50,6 +50,58 @@ public class Shop {
 	    String pass = "root";
 	    
 	    Scanner sc = new Scanner(System.in);
-}
+	    
+	    
+	       System.out.println(" Enter Shop Name :");
+	       String Shop_Name = sc.next();
+
+	       System.out.println("Enter Tel");
+	       String Tel = sc.next();
+
+	       System.out.println("Enter Fax");
+	       String Fax = sc.next();
+	       
+	       System.out.println("Enter Email");
+	       String  Email = sc.next();
+	       
+	       System.out.println("Enter Website");
+	       String  Website = sc.next();
+	       
+	       
+	       String sql = "insert into Shop values('"+Shop_Name+"',  '" + Tel + "', ' " + Fax + "',  '"+Email+"',  '"+Website+"')";
+	       
+	   	
+		    Connection con = null;
+		    
+		    
+		    
+		    try {
+
+		        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+		        DriverManager.registerDriver(driver);
+		        con = DriverManager.getConnection(url, user, pass);
+
+		        Statement st = con.createStatement();
+
+		        int m = st.executeUpdate(sql);
+		        if (m >=  0)
+		            System.out.println(
+		                    "Insert successfully : " + sql);
+		        else
+		            System.out.println("Insert failed");
+
+		        con.close();
+		    }
+	        
+		    
+		    catch (Exception ex) {
+		        // Display message when exceptions occurs
+		        System.err.println(ex);
+		    }
+		}       
+		
+	}
 	
-}
+	
+	
+	

@@ -42,7 +42,23 @@ public class ShopSettings {
 			
 			
 		case 2:
-			CustomerTable.insertIntoCustomerTable();
+			
+			System.out.println("please choose number from the options:");
+			System.out.println("1-Item table");
+			System.out.println("2-Invoice table");
+			int choose=sc.nextInt();
+			if(choose==1) {
+				ItemTable.insertIntoItemTable();
+			}
+			if(choose==2) {
+
+				InvoiceTable.insertIntoInvoiceTable();
+			}
+//			CustomerTable.insertIntoCustomerTable();
+//			Shop.insertIntoShop();
+			
+			ShopSettings.ShopSettingsList();
+			goBack = false;
 			break;	
 
 		case 5:

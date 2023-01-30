@@ -55,6 +55,56 @@ public class ItemTable {
 	    String pass = "root";
 	    
 	    Scanner sc = new Scanner(System.in);
-}
-	
-}
+	    
+		       System.out.println(" Enter Item Name :");
+		       String Item_Name = sc.next();
+
+		       System.out.println("Enter Unit Price");
+		       String Unit_Price = sc.next();
+
+		       System.out.println("Enter Quantity");
+		       String Quantity = sc.next();
+		       
+		       System.out.println("Enter Qty_Amount");
+		       String  Qty_Amount = sc.next();
+		       
+		       
+		       String sql = "insert into ItemTable values('"+Item_Name+"',  '" + Unit_Price + "', ' " + Quantity + "',  '"+Qty_Amount+"')";
+		       
+		   	
+			    Connection con = null;
+			    
+			    
+			    
+			    try {
+
+			        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+			        DriverManager.registerDriver(driver);
+			        con = DriverManager.getConnection(url, user, pass);
+
+			        Statement st = con.createStatement();
+
+			        int m = st.executeUpdate(sql);
+			        if (m >=  0)
+			            System.out.println(
+			                    "Insert successfully : " + sql);
+			        else
+			            System.out.println("Insert failed");
+
+			        con.close();
+			    }
+		        
+			    
+			    catch (Exception ex) {
+			        // Display message when exceptions occurs
+			        System.err.println(ex);
+			    }
+			}       
+			
+		}
+		
+		
+		
+		
+
+
