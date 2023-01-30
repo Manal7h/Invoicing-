@@ -4,22 +4,18 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-public class ItemTable {
-	public static void ItemTable() throws IOException{
+public class Shop {
+	public static void Shop() throws IOException{
 		
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 	    String pass = "root";
 	    
-	    
-	    String sql = "CREATE TABLE ItemTable" + "( Item_ID INTEGER PRIMARY KEY IDENTITY(1,1) ,"
-	    + "Item_Name VARCHAR(30) NOT NULL ,"+ "Unit_Price VARCHAR(30)," + "Quantity VARCHAR(30) ," 
-	    		+ "Qty_Amount VARCHAR(30))";
+	    String sql = "CREATE TABLE Shop" + "(Shop_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Shop_Name VARCHAR(60) NOT NULL ," 
+	    + "Tel VARCHAR(30)," + " Fax VARCHAR(30) ," + "Email VARCHAR(50)," +"Website VARCHAR(60))";
 		
-	
 	    Connection con = null;
-	    
-	    
+		
 	    try {
 
 	        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
@@ -43,8 +39,6 @@ public class ItemTable {
 	        // Display message when exceptions occurs
 	        System.err.println(ex);
 	    }
-	    
-
-	
 	}
+	
 }

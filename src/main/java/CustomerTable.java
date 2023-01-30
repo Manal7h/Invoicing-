@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class CustomerTable {
 	public static void CustomerTable() throws IOException{
@@ -15,8 +16,9 @@ public class CustomerTable {
 	    String sql = "CREATE TABLE CustomerTable" + "(Customer_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Customer_Name VARCHAR(60) NOT NULL ," 
 	    + "Phone VARCHAR(30)," + "Invoice_Date date NOT NULL ," + " No_Of_Items INTEGER ," + "Paid_Amount VARCHAR(30)," +"Balance VARCHAR(30))";
 		
-	    
+	
 	    Connection con = null;
+	    
 	    
 	    
 	    try {
@@ -42,8 +44,21 @@ public class CustomerTable {
 	        // Display message when exceptions occurs
 	        System.err.println(ex);
 	    }
-	    
-
-	
 	}
+	
+	public static void insertIntoCustomerTable() {
+		
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+	    String pass = "root";
+	    
+	    Scanner sc = new Scanner(System.in);
+	    
+	    
+		
+	}
+	
+	
+	
+	
 }

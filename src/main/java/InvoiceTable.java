@@ -15,9 +15,9 @@ public class InvoiceTable {
 	    String sql = "CREATE TABLE InvoiceTable" + "(Invoice_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," 
 	    + " Invoice_No INTEGER NOT NULL ,"  + "Invoice_Date date NOT NULL ," + " Customer_Name VARCHAR(30) ," 
 	    		+ " No_Of_Items INTEGER," +"Total VARCHAR(30), " + " Balance VARCHAR(30),"
-	    +"Customer_Id INTEGER REFERENCES CustomerTable(Customer_Id))";
+	    +"Customer_Id INTEGER REFERENCES CustomerTable(Customer_Id)," +"Item_ID INTEGER REFERENCES ItemTable(Item_ID),"+"Shop_Id INTEGER REFERENCES Shop(Shop_Id))";
 		
-	    
+	
 	    Connection con = null;
 	    
 	    
