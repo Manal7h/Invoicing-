@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class ItemTable {
 	public static void ItemTable() throws IOException{
@@ -43,8 +44,17 @@ public class ItemTable {
 	        // Display message when exceptions occurs
 	        System.err.println(ex);
 	    }
-	    
-
-	
+	   
 	}
+	
+	
+	public static void insertIntoItemTable() {
+		
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+	    String pass = "root";
+	    
+	    Scanner sc = new Scanner(System.in);
+}
+	
 }

@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.Scanner;
 
 public class CustomerTable {
@@ -54,11 +55,59 @@ public class CustomerTable {
 	    
 	    Scanner sc = new Scanner(System.in);
 	    
-	    
+	       System.out.println(" Enter Customer Name :");
+	       String Customer_Name = sc.next();
+
+	       System.out.println("Enter Phone");
+	       String Phone = sc.next();
+
+	       System.out.println("Enter Invoice Date");
+	       String Invoice_Date = sc.next();
+	       
+	       System.out.println("Enter No Of Items");
+	       Integer  No_Of_Items = sc.nextInt();
+	       
+	       System.out.println("Enter Paid Amount");
+	       String Paid_Amount = sc.next();
+	       
+	       System.out.println("Enter Balance");
+	       String Balance = sc.next();
+	       
+	       String sql = "insert into CustomerTable values('"+Customer_Name+"',  '" + Phone + "', ' " + Invoice_Date + "',  "+No_Of_Items+",  '"+Paid_Amount+"',  '"+Balance+"')";
+	       
+	   	
+		    Connection con = null;
+		    
+		    
+		    
+		    try {
+
+		        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+		        DriverManager.registerDriver(driver);
+		        con = DriverManager.getConnection(url, user, pass);
+
+		        Statement st = con.createStatement();
+
+		        int m = st.executeUpdate(sql);
+		        if (m >=  0)
+		            System.out.println(
+		                    "Insert successfully : " + sql);
+		        else
+		            System.out.println("Insert failed");
+
+		        con.close();
+		    }
+	        
+		    
+		    catch (Exception ex) {
+		        // Display message when exceptions occurs
+		        System.err.println(ex);
+		    }
+		}       
 		
 	}
 	
 	
 	
 	
-}
+

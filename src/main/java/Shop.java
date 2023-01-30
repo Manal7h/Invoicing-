@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class Shop {
 	public static void Shop() throws IOException{
@@ -40,5 +41,15 @@ public class Shop {
 	        System.err.println(ex);
 	    }
 	}
+	
+	
+	public static void insertIntoShop() {
+		
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+	    String pass = "root";
+	    
+	    Scanner sc = new Scanner(System.in);
+}
 	
 }

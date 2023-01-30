@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class InvoiceTable {
 	public static void InvoiceTable() throws IOException{
@@ -47,5 +48,16 @@ public class InvoiceTable {
 	    
 
 	
+	}
+	
+	public static void insertIntoInvoiceTable() {
+		
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+	    String pass = "root";
+	    
+	    Scanner sc = new Scanner(System.in);
+	    
+	    
 	}
 }

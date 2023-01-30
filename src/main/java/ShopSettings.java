@@ -39,6 +39,11 @@ public class ShopSettings {
 			Shop.Shop();
 			InvoiceTable.InvoiceTable();
 			break;
+			
+			
+		case 2:
+			CustomerTable.insertIntoCustomerTable();
+			break;	
 
 		case 5:
 			goBack = false;
