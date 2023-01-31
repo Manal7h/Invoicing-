@@ -28,6 +28,11 @@ public class ManageShopItems {
 				int select = sc.nextInt();
 				switch (select) {
 				
+				case 1:
+					MShopItems.insertIntoItemTable();;
+					Back = false;
+					break;
+				
 				case 2:
 					MShopItems.DeleteItems();
 					Back = false;
