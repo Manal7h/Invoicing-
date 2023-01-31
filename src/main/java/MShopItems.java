@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -57,38 +58,6 @@ public static void insertIntoItemTable() throws IOException {
 			}       
 			
 		
-		
-		
-		
-		
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	public static void DeleteItems() throws IOException{
@@ -125,8 +94,94 @@ public static void insertIntoItemTable() throws IOException {
 	    catch (Exception ex) {
 	        System.err.println(ex);
 	    }
-		
-	
-		
 	}
+	
+	
+public static void ChangeItemPrice() throws IOException {
+		
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+	    String pass = "root";
+	
+	    
+	    Connection con = null;
+	    
+	    try {
+	    	
+	        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	        DriverManager.registerDriver(driver);
+	        con = DriverManager.getConnection(url, user, pass);
+	        
+	        Statement st = con.createStatement();
+	        Scanner scanner=new Scanner(System.in);
+	        
+	    	System.out.println("Enter Item ID that you want to Change the Price :");
+	    
+	    	double InputId =scanner.nextDouble();
+	    	
+	    	System.out.println("Enter the Price : ");
+	    	
+	    	double price =scanner.nextDouble();
+	    	int count=0;
+	    	
+	    	String sql = "UPDATE ItemTable SET Unit_Price ="+price+" WHERE Item_ID = "+InputId;
+	    	
+	    	st.executeUpdate(sql); 
+	    	
+	    	System.out.println("the price has been updated!!");
+	    	
+	    }
+	
+	    catch (Exception ex) {
+	        System.err.println(ex);
+	    }
+	
+	}
+
+
+public static void ChangeItemPrice() throws IOException {
+	
+	String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+	String user = "sa";
+    String pass = "root";
+
+    
+    Connection con = null;
+    
+    try {
+    	
+        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+        DriverManager.registerDriver(driver);
+        con = DriverManager.getConnection(url, user, pass);
+        
+        Statement st = con.createStatement();
+        Scanner scanner=new Scanner(System.in);
+        
+    	System.out.println("Enter Item ID that you want to Change the Price :");
+    
+    	double InputId =scanner.nextDouble();
+    	
+    	System.out.println("Enter the Price : ");
+    	
+    	double price =scanner.nextDouble();
+    	int count=0;
+    	
+    	String sql = "UPDATE ItemTable SET Unit_Price ="+price+" WHERE Item_ID = "+InputId;
+    	
+    	st.executeUpdate(sql); 
+    	
+    	System.out.println("the price has been updated!!");
+    	
+    }
+
+    catch (Exception ex) {
+        System.err.println(ex);
+    }
+
+}
+
+
+
+
+
 }

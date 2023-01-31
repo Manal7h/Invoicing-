@@ -38,6 +38,12 @@ public class ManageShopItems {
 					Back = false;
 					break;
 					
+				case 3:
+					MShopItems.ChangeItemPrice();
+					Back = false;
+					break;	
+					
+					
 				case 5:
 					Back = false;
 					break;
