@@ -43,6 +43,7 @@ public class ManageShopItems {
 					Back = false;
 					break;	
 					
+					
 				case 4:
 					MShopItems.ReportAllItems();
 					Back = false;

@@ -129,7 +129,7 @@ public static void ChangeItemPrice() throws IOException {
 	    	
 	    	st.executeUpdate(sql); 
 	    	
-	    	System.out.println("the price has been updated!!");
+	    	System.out.println("Price has been Updated :)");
 	    	
 	    }
 	

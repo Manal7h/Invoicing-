@@ -39,6 +39,11 @@ public class Invoicing {
 				InvoiceTable.insertIntoInvoiceTable();
 				exitMainMune = false;
 			break;
+			
+			case 5:
+				ReportInvoices.ReportInvoices();
+				exitMainMune = false;
+			break;
 		}
 	}
 		while (exitMainMune);
