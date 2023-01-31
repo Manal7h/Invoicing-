@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class InvoiceTable {
 	public static void InvoiceTable() throws IOException{
+
+		
 		
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
@@ -50,13 +52,17 @@ public class InvoiceTable {
 	
 	}
 	
-	public static void insertIntoInvoiceTable() {
+	public static void insertIntoInvoiceTable(String url , String user , String pass) {
 		
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
-		String user = "sa";
-	    String pass = "root";
+    	Scanner sc = new Scanner(System.in);
 	    
-	    Scanner sc = new Scanner(System.in);
+
+		
+//		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+//		String user = "sa";
+//	    String pass = "root";
+	    
+
 	    
 	    
 	       System.out.println(" Enter Invoice No :");

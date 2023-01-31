@@ -12,6 +12,16 @@ public class Invoicing {
 		Scanner sc = new Scanner(System.in);
 		boolean exitMainMune = true;
 
+	    
+	       System.out.println(" Enter url:");
+	       String url = sc.next();
+
+	       System.out.println("Enter user:");
+	       String user = sc.next();
+	       
+	       System.out.println("Enter pass:");
+	       String pass = sc.next();
+	       
 		do {
 			gitMainMune();
 			int select = sc.nextInt();
@@ -19,7 +29,7 @@ public class Invoicing {
 
 			case 1:
 				ShopSettings ShopSettings = new ShopSettings();
-				ShopSettings.ShopSettingsList();
+				ShopSettings.ShopSettingsList(url, user, pass);
 				break;	
 			
 			case 2:	
@@ -28,7 +38,7 @@ public class Invoicing {
 			break;
 			
 			case 3:
-				InvoiceTable.insertIntoInvoiceTable();
+				InvoiceTable.insertIntoInvoiceTable(url,user,pass);
 				exitMainMune = false;
 			break;
 			
