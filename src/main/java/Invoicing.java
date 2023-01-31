@@ -46,6 +46,23 @@ public class Invoicing {
 				Search.Search();
 				exitMainMune = false;
 			break;
+			
+			case 8:
+				System.out.println("Enter 1 , If Are you sure you want to exit . Enter 0 to program ends ");
+				int choose=sc.nextInt();
+				if(choose==1) {
+					exitMainMune = false;
+					System.out.println("Thank you !");
+				}
+				if(choose==0) {
+					gitMainMune();
+					exitMainMune = false;
+
+				}
+				
+			break;
+
+			
 		}
 	}
 		while (exitMainMune);
@@ -58,7 +75,7 @@ public class Invoicing {
 		List<String> muneItemsList = Arrays.asList(
 
 				"Application Main Menu:\n","1- Shop Setting" , "2- Manage Shop Items" , "3- Create New Invoice", "4- Report: Statistics"
-					, "5- Report: All Invoices" , "6- Search (1) Invoice" , "7- Program Statistics" );
+					, "5- Report: All Invoices" , "6- Search (1) Invoice" , "7- Program Statistics" , "8- Exit " );
 		
 		
 		for (String x : muneItemsList) {
