@@ -76,11 +76,11 @@ public static void insertIntoItemTable() throws IOException {
 	        
 	        Statement st = con.createStatement();
 	        
-	        Scanner scanner=new Scanner(System.in);
+		    Scanner sc = new Scanner(System.in);
 	        
 	    	System.out.println("Enter Item ID that you want to Delete: ");
 	    	
-	        int InputId =scanner.nextInt();
+	        int InputId =sc.nextInt();
 	        
 	        int count=0;
 	        
@@ -113,15 +113,16 @@ public static void ChangeItemPrice() throws IOException {
 	        con = DriverManager.getConnection(url, user, pass);
 	        
 	        Statement st = con.createStatement();
-	        Scanner scanner=new Scanner(System.in);
+	        
+		    Scanner sc = new Scanner(System.in);
 	        
 	    	System.out.println("Enter Item ID that you want to Change the Price :");
 	    
-	    	double InputId =scanner.nextDouble();
+	    	double InputId =sc.nextDouble();
 	    	
 	    	System.out.println("Enter the Price : ");
 	    	
-	    	double price =scanner.nextDouble();
+	    	double price =sc.nextDouble();
 	    	int count=0;
 	    	
 	    	String sql = "UPDATE ItemTable SET Unit_Price ="+price+" WHERE Item_ID = "+InputId;
@@ -139,12 +140,21 @@ public static void ChangeItemPrice() throws IOException {
 	}
 
 
-public static void ChangeItemPrice() throws IOException {
+public static void ReportAllItems () throws IOException {
 	
 	String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
 	String user = "sa";
     String pass = "root";
 
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.print("How many num of rows you want to Report :");
+    
+    Integer print = sc.nextInt();
+    
+    int count = 0;
+    
+    String sql = " SELECT * FROM ItemTable " ;
     
     Connection con = null;
     
@@ -155,22 +165,25 @@ public static void ChangeItemPrice() throws IOException {
         con = DriverManager.getConnection(url, user, pass);
         
         Statement st = con.createStatement();
-        Scanner scanner=new Scanner(System.in);
         
-    	System.out.println("Enter Item ID that you want to Change the Price :");
-    
-    	double InputId =scanner.nextDouble();
-    	
-    	System.out.println("Enter the Price : ");
-    	
-    	double price =scanner.nextDouble();
-    	int count=0;
-    	
-    	String sql = "UPDATE ItemTable SET Unit_Price ="+price+" WHERE Item_ID = "+InputId;
-    	
-    	st.executeUpdate(sql); 
-    	
-    	System.out.println("the price has been updated!!");
+        ResultSet result = st.executeQuery(sql); //ran the Q like sql
+        
+        while (result.next() && count < print) {
+        	
+			int Item_ID = result.getInt("Item_ID");
+			
+			String Item_Name = result.getString("Item_Name");
+			
+			double Unit_Price = result.getDouble("Unit_Price");
+			
+			double Quantity = result.getDouble("Quantity");
+			
+			double  Qty_Amount = Unit_Price * Quantity;
+			
+			
+			System.out.println(Item_ID + " " + Item_Name + " " + Unit_Price + " " + Quantity + " " + Qty_Amount );
+			count++;
+		}
     	
     }
 
@@ -179,9 +192,5 @@ public static void ChangeItemPrice() throws IOException {
     }
 
 }
-
-
-
-
 
 }

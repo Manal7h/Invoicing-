@@ -24,7 +24,6 @@ public class Invoicing {
 				
 				ShopSettings ShopSettings = new ShopSettings();
 				ShopSettings.ShopSettingsList();
-
 				break;
 			
 			
@@ -35,9 +34,14 @@ public class Invoicing {
 //				System.out.println("in menu main");
 		
 			break;
+			
+			case 3:
+				InvoiceTable.insertIntoInvoiceTable();
+				exitMainMune = false;
+			break;
 		}
 	}
-		while (true);
+		while (exitMainMune);
 	}
 	
 
