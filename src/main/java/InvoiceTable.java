@@ -15,7 +15,7 @@ public class InvoiceTable {
 	    
 	    String sql = "CREATE TABLE InvoiceTable" + "(Invoice_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," 
 	    + " Invoice_No INTEGER NOT NULL ,"  + "Invoice_Date date NOT NULL ," 
-	    		+"Total VARCHAR(30), " + " Balance VARCHAR(30),"
+	    		+"Total decimal(10,2), "+  "Paid_Amount decimal(10,2)," + " Balance decimal(10,2),"
 	    +"Customer_Id INTEGER REFERENCES CustomerTable(Customer_Id)," +"Item_ID INTEGER REFERENCES ItemTable(Item_ID),"+"Shop_Id INTEGER REFERENCES Shop(Shop_Id),"+" Header_Id INTEGER REFERENCES InvoiceHeader(Header_Id))";
 		
 	
@@ -66,10 +66,12 @@ public class InvoiceTable {
 	       String Invoice_Date = sc.next();
 
 	       System.out.println("Enter Total");
-	       String  Total = sc.next();
+	       double  Total = sc.nextDouble();
+	      
+	       System.out.println("Enter Paid Amount");
+	       double  Paid_Amount = sc.nextDouble();
 	       
-	       System.out.println("Enter Balance");
-	       String  Balance = sc.next();
+	       double  Balance = Paid_Amount - Total ;
 	       
 	       System.out.println("Enter Customer Id");
 	       int  Customer_Id = sc.nextInt();
@@ -85,7 +87,7 @@ public class InvoiceTable {
 	       
 	       
 	       
-	       String sql = "insert into InvoiceTable values("+Invoice_No+",  '" + Invoice_Date + "',  '"+Total+"',  '"+Balance+"',"+Customer_Id+", "+Item_ID+", "+Shop_Id+", "+Header_Id+")";
+	       String sql = "insert into InvoiceTable values("+Invoice_No+",  '" + Invoice_Date + "',  "+Total+", "+Paid_Amount+", "+Balance+","+Customer_Id+", "+Item_ID+", "+Shop_Id+", "+Header_Id+")";
 	       
 	   	
 		    Connection con = null;

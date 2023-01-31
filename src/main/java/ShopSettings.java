@@ -38,7 +38,6 @@ public class ShopSettings {
 //			ItemTable.ItemTable();
 //			Shop.Shop();
 			InvoiceTable.InvoiceTable();
-			
 //			InvoiceHeader.InvoiceHeader();
 			break;
 			
@@ -58,6 +57,7 @@ public class ShopSettings {
 			}
 //			CustomerTable.insertIntoCustomerTable();
 //			Shop.insertIntoShop();
+//			InvoiceHeader.insertIntoInvoiceHeader();
 			
 			ShopSettings.ShopSettingsList();
 			goBack = false;

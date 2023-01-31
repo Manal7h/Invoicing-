@@ -14,8 +14,8 @@ public class ItemTable {
 	    
 	    
 	    String sql = "CREATE TABLE ItemTable" + "( Item_ID INTEGER PRIMARY KEY IDENTITY(1,1) ,"
-	    + "Item_Name VARCHAR(30) NOT NULL ,"+ "Unit_Price decimal(18,2)," + "Quantity decimal(18,2) ," 
-	    		+ "Qty_Amount decimal(18,2))";
+	    + "Item_Name VARCHAR(30) NOT NULL ,"+ "Unit_Price decimal(10,2)," + "Quantity decimal(10,2) ," 
+	    		+ "Qty_Amount decimal(10,2))";
 		
 	
 	    Connection con = null;
