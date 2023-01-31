@@ -13,22 +13,23 @@ public class CustomerTable {
 		String user = "sa";
 	    String pass = "root";
 	    
-	    
 	    String sql = "CREATE TABLE CustomerTable" + "(Customer_Id INTEGER PRIMARY KEY IDENTITY(1,1) ," + "Customer_Name VARCHAR(60) NOT NULL ," 
 	    + "Phone VARCHAR(30))";
-		
-	
+	    //can not create table direct in java so we should write query
+	    
 	    Connection con = null;
 	    
 	    
 	    
 	    try {
-
+	    	//establish the connection JDBC driver with SQL databace
 	        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	        //Registering drivers
 	        DriverManager.registerDriver(driver);
+	        //Reference to connection interface
 	        con = DriverManager.getConnection(url, user, pass);
 
-	        Statement st = con.createStatement();
+	        Statement st = con.createStatement(); //Execution the query
 
 	        int m = st.executeUpdate(sql);
 	        if (m >=  0)
@@ -63,19 +64,19 @@ public class CustomerTable {
 	       
 	       
 	       String sql = "insert into CustomerTable values('"+Customer_Name+"',  '" + Phone + "')";
-	       
+	     //can not insert direct in java we should write query 
 	   	
 		    Connection con = null;
 		    
 		    
 		    
 		    try {
-
+		    	//Connection JDBC drive with SQL databace
 		        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 		        DriverManager.registerDriver(driver);
 		        con = DriverManager.getConnection(url, user, pass);
 
-		        Statement st = con.createStatement();
+		        Statement st = con.createStatement(); //Executing query
 
 		        int m = st.executeUpdate(sql);
 		        if (m >=  0)
@@ -84,6 +85,7 @@ public class CustomerTable {
 		        else
 		            System.out.println("Insert failed");
 
+		        //Closing the connections
 		        con.close();
 		    }
 	        

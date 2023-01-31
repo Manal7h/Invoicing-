@@ -12,31 +12,28 @@ public class Invoicing {
 		Scanner sc = new Scanner(System.in);
 		boolean exitMainMune = true;
 
-
-
-
 		do {
 			gitMainMune();
 			int select = sc.nextInt();
 			switch (select) {
 
 			case 1:
-				
 				ShopSettings ShopSettings = new ShopSettings();
 				ShopSettings.ShopSettingsList();
-				break;
+				break;	
 			
-			
-			case 2:
-				
+			case 2:	
 				ManageShopItems ManageShopItems = new ManageShopItems();
 				ManageShopItems.ManageShopItems();
-//				System.out.println("in menu main");
-		
 			break;
 			
 			case 3:
 				InvoiceTable.insertIntoInvoiceTable();
+				exitMainMune = false;
+			break;
+			
+			case 4:
+				ReportStatistics.ReportStatistics();
 				exitMainMune = false;
 			break;
 			

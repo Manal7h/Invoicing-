@@ -167,8 +167,9 @@ public static void ReportAllItems () throws IOException {
         Statement st = con.createStatement();
         
         ResultSet result = st.executeQuery(sql); //ran the Q like sql
+        //resultset it is showes the table of data from database 
         
-        while (result.next() && count < print) {
+        while (result.next() && count < print) { //count to read  rows
         	
 			int Item_ID = result.getInt("Item_ID");
 			

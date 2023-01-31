@@ -27,7 +27,7 @@ public class ItemTable {
 	        DriverManager.registerDriver(driver);
 	        con = DriverManager.getConnection(url, user, pass);
 
-	        Statement st = con.createStatement();
+	        Statement st = con.createStatement(); //Execution the query
 
 	        int m = st.executeUpdate(sql);
 	        if (m >=  0)
