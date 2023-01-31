@@ -5,10 +5,7 @@ import java.util.Scanner;
 
 public class ShopSettings {
 
-	public static void ShopSettingsList(String url,String user,String pass) throws IOException {
-		
-		
-
+	public static void ShopSettingsList(String url, String user, String pass) throws IOException {
 
 		List<String> ShopSettingsList = Arrays.asList(
 
