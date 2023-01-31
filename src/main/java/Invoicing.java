@@ -41,6 +41,11 @@ public class Invoicing {
 				ReportInvoices.ReportInvoices();
 				exitMainMune = false;
 			break;
+			
+			case 6:
+				Search.Search();
+				exitMainMune = false;
+			break;
 		}
 	}
 		while (exitMainMune);
