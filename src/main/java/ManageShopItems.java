@@ -27,7 +27,12 @@ public class ManageShopItems {
 			do {
 				int select = sc.nextInt();
 				switch (select) {
-
+				
+				case 2:
+					MShopItems.DeleteItems();
+					Back = false;
+					break;
+					
 				case 5:
 					Back = false;
 					break;
