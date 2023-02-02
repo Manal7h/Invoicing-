@@ -31,7 +31,7 @@ public class Search {
 
 			ResultSet result = st.executeQuery(sql); // ran the Q like sql
 
-			while (result.next() && count < insert) {
+			while (result.next()) {
 
 				int Invoice_Id = result.getInt("Invoice_Id");
 				int Invoice_No = result.getInt("Invoice_No");
@@ -49,7 +49,7 @@ public class Search {
 						+ Invoice_Date + "\n No_of_items :" + No_of_items + "\n Total :" + Total + "\n Paid_Amount :"
 						+ Paid_Amount + "\n Balance :" + Balance + "\n Customer_Id :" + Customer_Id + "\n Item_ID :"
 						+ Item_ID + "\n Shop_Id :" + Shop_Id + "\n Header_Id :" + Header_Id);
-				count++;
+//				count++;
 
 			}
 			con.close();
