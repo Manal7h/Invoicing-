@@ -8,11 +8,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class ReportInvoices {
-	public static void ReportInvoices() throws IOException {
+	public static void ReportInvoices(String url, String user, String pass) throws IOException {
 
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
-		String user = "sa";
-		String pass = "root";
+//		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+//		String user = "sa";
+//		String pass = "root";
 
 		Scanner sc = new Scanner(System.in);
 

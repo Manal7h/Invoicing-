@@ -32,7 +32,7 @@ public class Invoicing {
 
 			case 2:
 //				ManageShopItems ManageShopItems = new ManageShopItems();
-				ManageShopItems.ManageShopItems();
+				ManageShopItems.ManageShopItems(url, user, pass);
 				break;
 
 			case 3:
@@ -41,12 +41,12 @@ public class Invoicing {
 				break;
 
 			case 4:
-				ReportStatistics.ReportStatistics();
+				ReportStatistics.ReportStatistics(url, user, pass);
 				exitMainMune = false;
 				break;
 
 			case 5:
-				ReportInvoices.ReportInvoices();
+				ReportInvoices.ReportInvoices(url, user, pass);
 				exitMainMune = false;
 				break;
 

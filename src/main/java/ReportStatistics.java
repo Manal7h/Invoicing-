@@ -7,11 +7,11 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class ReportStatistics {
-	public static void ReportStatistics() throws IOException {
+	public static void ReportStatistics(String url, String user, String pass) throws IOException {
 
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
-		String user = "sa";
-		String pass = "root";
+//		String url = "jdbc:sqlserver://localhost:1433;databaseName=Invoicing;encrypt=true;trustServerCertificate=true";
+//		String user = "sa";
+//		String pass = "root";
 
 		Scanner sc = new Scanner(System.in);
 

@@ -55,6 +55,20 @@ public class ShopSettings {
 				ShopSettings.ShopSettingsList(url, user, pass);
 				goBack = false;
 				break;
+				
+				
+			case 3:
+				SetShopName.SetShopName();
+				goBack = false;
+				break;
+				
+			case 4:
+				InvoiceHeader.insertIntoInvoiceHeader();
+				goBack = false;
+				break;	
+				
+				
+					
 
 			case 5:
 				goBack = false;

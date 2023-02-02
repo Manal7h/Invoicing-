@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ManageShopItems {
 
-	public static void ManageShopItems() throws IOException {
+	public static void ManageShopItems(String url, String user, String pass) throws IOException {
 
 		List<String> ManageShopItems = Arrays.asList(
 
